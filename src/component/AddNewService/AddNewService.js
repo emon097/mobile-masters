@@ -12,7 +12,6 @@ const AddNewService = () => {
   } = useForm();
   const { user } = useContext(AuthContext);
   let Scodes = Math.floor(Math.random() * 1234567890 + 1);
-
   const onSubmit = (data, e) => {
     const SName = data.ServiceName;
     const SCategory = data.ServiceCategory;

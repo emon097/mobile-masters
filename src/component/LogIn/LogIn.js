@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { GoogleAuthProvider } from "firebase/auth";
@@ -13,16 +13,22 @@ const LogIn = () => {
     formState: { errors },
   } = useForm();
   const provider = new GoogleAuthProvider();
+  const navigate = useNavigate();
+
   const handlegoogleSignIn = () => {
     googleRegister(provider).then((res) => {
       const user = res.user;
-      console.log(user);
+      if (user.uid) {
+        navigate("/");
+      }
     });
   };
   const onSubmit = (data) => {
     loginUser(data.email, data.password).then((res) => {
       const user = res.user;
-      console.log(user);
+      if (user.uid) {
+        navigate("/");
+      }
     });
   };
   return (

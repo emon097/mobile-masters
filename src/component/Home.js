@@ -15,10 +15,10 @@ const Home = () => {
       });
   }, []);
   return (
-    <div className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-3 bg-gray-200">
+    <div className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-3 ">
       {comment.map((comments) => (
         <>
-          <body class="antialiased bg-gray-200 text-gray-900 font-sans p-6">
+          <body class="antialiased  text-gray-900 font-sans p-6">
             <div class="container mx-auto">
               <div class="flex flex-wrap ">
                 <div class="w-full  p-4">
